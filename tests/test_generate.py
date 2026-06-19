@@ -11,7 +11,6 @@ from pydantic import ValidationError
 from razorpay_qa import generation as E
 from razorpay_qa import generation as G
 from razorpay_qa.generation import _citations
-from razorpay_qa.utils.seeds import SEEDS
 from razorpay_qa.utils.schema import (
     AmbiguityType,
     Answerability,
@@ -23,6 +22,8 @@ from razorpay_qa.utils.schema import (
     Provenance,
     QARecord,
 )
+from razorpay_qa.utils.seeds import SEEDS
+
 
 def test_index_has_core_clauses(index):
     for cid in ["PartA/3.4", "PartA/7.2", "PartA/12.3", "PartA/16.1", "PartA/14.10"]:

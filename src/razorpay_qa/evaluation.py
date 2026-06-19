@@ -13,9 +13,8 @@ from statistics import mean
 from .utils.config import DATASET_DIR, EVAL_DIR, Settings
 from .utils.guardrails import check_eval_result
 from .utils.ingest import ClauseIndex, build_clause_index, load_source
-from .utils.llm import PROVIDER, get_judge_model, get_model
+from .utils.llm import PROVIDER, get_judge_model
 from .utils.llm import judge_model_name as get_judge_model_name
-from .utils.llm import model_name as get_model_name
 from .utils.schema import DeterministicChecks, EvalBlock, QARecord, ReviewStatus
 
 

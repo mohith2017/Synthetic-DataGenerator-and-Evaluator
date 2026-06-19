@@ -3,9 +3,9 @@ from __future__ import annotations
 import argparse
 import sys
 
+from .generation import postprocess
 from .utils.config import DATASET_DIR, REPO_ROOT, SOURCE_DIR, load_settings
 from .utils.curate import curate
-from .generation import postprocess
 from .utils.ingest import build_clause_index, load_source, save_parsed_text
 from .utils.llm import PROVIDER
 
