@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "evaluated_at": "2026-06-19T06:59:23+00:00",
+  "dataset_sha256": "224df257e697eb2d93d16ff0750958f6b51e91f4b4084fe8c6977373e8a775d6",
+  "provider": "anthropic",
+  "model": "gpt-5.5",
+  "threshold": 0.6,
+  "totals": {
+    "records": 54,
+    "passed": 27,
+    "deterministic_citation_passed": 54
+  },
+  "guardrail_flags": {}
+}

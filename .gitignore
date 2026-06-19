@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.env
+.deepeval/
+VIDEO_PREP.md
+.cursor/
+.agents/
+artifacts/**/dataset_evaluated.jsonl

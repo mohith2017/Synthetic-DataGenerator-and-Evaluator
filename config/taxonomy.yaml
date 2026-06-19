@@ -1,0 +1,33 @@
+categories: [A, B, C]            # A=clear answer, B=clarification required, C=genuine ambiguity
+
+expected_behavior: [answer_directly, ask_clarifying_question, flag_ambiguity]
+
+answerability: [answerable, needs_clarification, indeterminate]
+
+ambiguity_type: [silent, vague, external_cross_reference]
+
+question_type: [factual, multi_hop, comparative, conditional, adversarial_false_premise]
+
+difficulty: [easy, medium, hard]
+
+personas:
+  - engineer
+  - cto
+  - finance_ops
+  - founder
+  - support_lead
+
+topics:
+  - fees
+  - refunds
+  - settlements
+  - chargebacks_fraud
+  - kyc_onboarding
+  - suspension_termination
+  - data_protection
+  - gaming
+  - cross_border
+  - devices_pos
+  - prohibited_businesses
+  - liability
+  - taxes_gst
