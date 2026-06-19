@@ -26,7 +26,7 @@ def _category_a_dag_metric(model):
         DeepAcyclicGraph,
         VerdictNode,
     )
-    from deepeval.test_case import LLMTestCaseParams as P
+    from deepeval.test_case import SingleTurnParams as P
 
     params = [P.INPUT, P.ACTUAL_OUTPUT]
     cites_clause = BinaryJudgementNode(
