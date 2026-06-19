@@ -27,8 +27,12 @@
 
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate
-pip install -e .                       # installs deepeval + anthropic
-echo "ANTHROPIC_API_KEY=sk-ant-..." > .env
+pip install -e .                       # installs all deps (deepeval, anthropic, openai, …)
+
+cp .env.example .env
+# then edit .env and fill in both keys:
+#   ANTHROPIC_API_KEY=sk-ant-...   (required — generator)
+#   OPENAI_API_KEY=sk-...          (optional — GPT-5.5 judge; falls back to Anthropic if absent)
 ```
 
 ## Usage
@@ -121,7 +125,7 @@ artifacts/     source/, dataset/vN/, eval/vN/
 ## Docs & further reading
 
 - `[docs/setup.md](docs/setup.md)`, `[docs/runbook-generate.md](docs/runbook-generate.md)`, `[docs/runbook-evaluate.md](docs/runbook-evaluate.md)` — setup + per-stage runbooks.
-- `[docs/PROCESS.md](docs/PROCESS.md)` — full design-decision log (newest first).
+- `[docs/CHANGELOG.md](docs/CHANGELOG.md)` — full design-decision log (newest first).
 
 ## Safety / legal
 
@@ -130,4 +134,4 @@ use synthetic merchants (no PII). Outputs are informational, not legal advice.
 
 ## Process
 
-The full design-decision log lives in **[docs/PROCESS.md](docs/PROCESS.md)** (preserved, newest-first).
+The full design-decision log lives in **[docs/CHANGELOG.md](docs/CHANGELOG.md)** (preserved, newest-first).

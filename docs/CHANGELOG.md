@@ -9,7 +9,7 @@ This is the project's audit trail; the README links here to stay scannable.
 
 **Changes:**
 - `artifacts/eval/v1/eval_summary.md`: rewrote worst-3 analyses from boilerplate to detailed root-cause analysis per record
-- `docs/PROCESS.md` (this file): updated eval results from v1 generation run to reflect actual current numbers
+- `docs/CHANGELOG.md` (this file): updated eval results from v1 generation run to reflect actual current numbers
 - `docs/VIDEO_PREP.md`: updated spoken script with correct composite (0.606), pass rate (27/54), dimension means, worst-3 records (now all Category A, not B), and root-cause narrative
 - `README.md`: composite in highlights updated from 0.624 → 0.606
 
@@ -64,7 +64,7 @@ This is the project's audit trail; the README links here to stay scannable.
 - `evaluation.py` → `evaluation/__init__.py` (consolidated metrics + runner; internal imports `.x` → `..x`).
 - `postprocess.py` → `generation/postprocess.py`; `curate.py` → `generation/curate.py` (imports `.config/.schema/__version__` → `..`).
 - Consumers updated: `cli.py` (`from .generation.curate/postprocess import …`), `generate.py` (`from .postprocess import verify_citations`).
-- Docs: README repo map, `docs/runbook-generate.md`, VIDEO_PREP screen cues.
+- Docs: README repo map, `docs/runbook-generate.md`.
 
 **Design decisions:**
 - One package per pipeline stage — **ingest → generation → evaluation** — so the directory tree reads as the data flow. `generation/` now owns the whole dataset-build path (seeds → generate → enrich → postprocess → curate).
@@ -84,7 +84,7 @@ This is the project's audit trail; the README links here to stay scannable.
 - Flattened `ingest/` package → single `ingest.py` (load_source + clause_index).
 - Flattened `evaluation/` package → single `evaluation.py` (metrics + evaluate).
 - Merged `generation/contexts.py` into `generation/generate.py`.
-- Updated all import sites (`cli.py`, `guardrails.py`, `postprocess.py`, `generate.py`, `evaluation.py`, `tests/conftest.py`, `tests/test_eval.py`) and docs (README repo map, runbook-generate, VIDEO_PREP screen cues).
+- Updated all import sites (`cli.py`, `guardrails.py`, `postprocess.py`, `generate.py`, `evaluation.py`, `tests/conftest.py`, `tests/test_eval.py`) and docs (README repo map, runbook-generate).
 
 **Design decisions:**
 - Claude 3.5 Sonnet returns a plain-text JSON body (no `ThinkingBlock`), so DeepEval's `AnthropicModel.generate` parses it directly — this removes the root cause of the `DeepEvalError: invalid JSON` crash that the Claude 4.x `tool_use` workaround was patching around. Reverting `_gen` keeps a single, framework-native generation path.
@@ -113,7 +113,7 @@ This is the project's audit trail; the README links here to stay scannable.
 **Changes:**
 - `config/pipeline.yaml` + `src/razorpay_qa/llm.py`: `models.anthropic.model` `claude-3-5-sonnet-latest` → `claude-opus-4-8` (the confirmed Claude API ID); updated the `llm.py` default fallbacks to match.
 - `README.md`: rewritten to a concise, scannable format (Highlights → behaviours table → Install → Usage → Architecture → How it works → Repo map → Docs), per the README guide's "elevator pitch + link-fest" principle.
-- `PROCESS.md` (new): the full design-decision log moved here verbatim (nothing removed/rewritten — only relocated) so the README stays clean while the audit trail is preserved and keeps growing newest-first.
+- `CHANGELOG.md` (new): the full design-decision log moved here verbatim (nothing removed/rewritten — only relocated) so the README stays clean while the audit trail is preserved and keeps growing newest-first.
 
 **Design decisions:**
 - Kept `temperature: 0.0` — the 400-on-temperature caveat for Opus 4.8 only applies with extended thinking enabled, which DeepEval's `AnthropicModel` does not use.
